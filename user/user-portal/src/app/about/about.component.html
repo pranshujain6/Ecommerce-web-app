@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+  
+    
+  </head>
+  <body>
+  
+
+  <div class="site-wrap">
+    <app-header></app-header>
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a routerLink="/home">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">About</strong></div>
+        </div>
+      </div>
+    </div>  
+
+    <div class="site-section border-bottom" data-aos="fade">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <div class="block-16">
+              
+              <figure>
+                <img src="../../assets/images/blog_1.jpg" alt="Image placeholder" class="img-fluid rounded">
+
+              </figure>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
+            
+            
+            <div class="site-section-heading pt-3 mb-4">
+              <h2 class="text-black">How We Started</h2>
+            </div>
+           
+           <p>{{content.howwestarted}}</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section border-bottom" data-aos="fade">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 site-section-heading text-center pt-4">
+            <h2>The Team</h2>
+          </div>
+        </div>
+        <div class="col-md-12">  
+          <owl-carousel [options]="carouselOptions" [items]="team" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+            <div class="item" *ngFor="let employee of team;let i= index">
+              <div class="slide-text">
+              
+                <div class="block-38 text-center">
+                    <div class="block-38-img">
+                      <div class="block-38-header">
+                        <img src={{employee.image}} style="margin-left:100px" alt="Image placeholder" class="mb-4">
+                        <h3 class="block-38-heading h4">{{employee.name}}</h3>
+                        <p class="block-38-subheading">{{employee.subheading}}</p>
+                      </div>
+                      <div class="block-38-body">
+                        <p>{{employee.detail}}</p>
+                      </div>
+                    </div>
+                </div>
+            
+              </div>
+            </div>
+          </owl-carousel>
+        </div>
+      </div>
+    </div>
+    
+  
+
+    <div class="site-section site-section-sm site-blocks-1 border-0" data-aos="fade">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
+            <div class="icon mr-4 align-self-start">
+              <span class="icon-truck"></span>
+            </div>
+            <div class="text">
+              <h2 class="text-uppercase">Free Shipping</h2>
+              <p>{{content.shipping}}</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon mr-4 align-self-start">
+              <span class="icon-refresh2"></span>
+            </div>
+            <div class="text">
+              <h2 class="text-uppercase">Free Returns</h2>
+              <p>{{content.return}}</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon mr-4 align-self-start">
+              <span class="icon-help"></span>
+            </div>
+            <div class="text">
+              <h2 class="text-uppercase">Customer Support</h2>
+              <p>{{content.support}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+    
+  </body>
+</html>

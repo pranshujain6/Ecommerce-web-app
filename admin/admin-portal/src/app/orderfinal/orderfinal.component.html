@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Product Admin - Dashboard HTML Template</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    </head>
+
+<body id="reportsPage">
+    <div class="" id="home">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+                <a class="navbar-brand" >
+                    <h1 class="tm-site-title mb-0">Product Admin</h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars tm-nav-icon"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto h-100">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/dashboard">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Dashboard
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/list">
+                                <i class="fas fa-shopping-cart"></i>
+                                Products
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link d-block" (click)="logout()" style="color:orange">
+                                Admin, <b>Logout</b>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="text-white mt-5 mb-5">Welcome back, <b>Admin</b></p>
+                </div>
+            </div>
+            <!-- row -->      
+                    <h2 class="tm-block-title">User Detail</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">State</th>
+                                        <th scope="col">Zip</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">OrderNote</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><b>{{orderDetail.fname}}</b></th>
+                                        <td>{{orderDetail.address}}</td>
+                                        <td><b>{{orderDetail.state}}</b></td>
+                                        <td><b>{{orderDetail.zip}}</b></td>
+                                        <td><b>{{orderDetail.email}}</b></td>
+                                        <td>{{orderDetail.phone}}</td>
+                                        <td>{{orderDetail.ordernote}}</td>
+                                        <td>{{orderDetail.date}}</td>
+                                        <td>{{orderDetail.time}}</td>
+                                        <td>{{orderDetail.total}}</td>
+                                    </tr>
+                                </tbody>
+                           </table>
+               
+            <div class="row tm-content-row">
+                <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <h2 class="tm-block-title">Orders List</h2>
+                        <table class="table">
+                            <thead>
+                                <tr >
+                                    <th scope="col">Seq</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Short Description</th>
+                                    <th scope="col">Size</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Net</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of products ; index as i">
+                                    <th scope="row"><b>{{i+1}}</b></th>
+                                    <td>{{p.name}}</td>
+                                    <td><b>{{p.sdesc}}</b></td>
+                                    <td><b>{{orderDetail.products[i].size}}</b></td>
+                                    <td><b>{{p.price}}</b></td>
+                                    <td>{{orderDetail.products[i].qunatity}}</td>
+                                    <td>{{p.price*orderDetail.products[i].qunatity}}</td>       
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary btn-lg" (click)="dispatched()">Dispatched</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+    
+</body>
+
+</html>

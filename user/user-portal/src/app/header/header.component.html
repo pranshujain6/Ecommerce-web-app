@@ -1,0 +1,58 @@
+
+<header class="site-navbar" role="banner">
+    <div class="site-navbar-top">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+            <form action="callFunction()" class="site-block-top-search">
+              <span class="icon icon-search2"></span>
+              <input type="text" class="form-control border-0" placeholder="Search "    
+              (keyup)="callFunction($event)"  name="seachField" [(ngModel)]="productName" />
+            </form>
+          </div>
+
+          <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+            <div class="site-logo">
+              <a routerLink="/home" class="js-logo-clone">Shoppers</a>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+            <div class="site-top-icons">
+              <ul>
+                <li>
+                  <a routerLink="/cart" class="site-cart">
+                    <span class="icon icon-shopping_cart"></span>
+                    <span class="count">{{userTotalQuantity}}</span>
+                  </a>
+                </li>
+                <li><span class="icon icon-person" (click)="logout()"></span></li> 
+                <li class="d-inline-block d-md-none ml-md-0"><span class="icon-menu" ></span></li>
+              </ul>
+            </div> 
+          </div>
+
+        </div>
+      </div>
+    </div> 
+    <nav class="site-navigation text-right text-md-center" role="navigation">
+      <div class="container">
+        <ul class="site-menu js-clone-nav d-none d-md-block">
+          <li>
+            <a routerLink="/home">Home</a></li>
+            <li><a routerLink="/shop">Shop</a></li>
+             <li class="has-children active">
+               Category
+             <ul class="dropdown">
+                <li *ngFor="let cate of category;let i= index"><a (click)="callShop(cate._id)">{{cate.name}}</a></li>
+             </ul>
+            </li>
+          
+          <li><a routerLink="/about">About</a></li>
+          <li><a (click)="newArrival()">New Arrivals</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>

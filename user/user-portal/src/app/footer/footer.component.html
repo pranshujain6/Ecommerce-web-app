@@ -1,0 +1,47 @@
+<footer class="site-footer border-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="footer-heading mb-4">Social</h3>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <ul class="list-unstyled">
+                <li><a href={{address.facebook}}>Facebook</a></li>
+                <li><a href={{address.insta}}>Instagram</a></li>
+                <li><a href={{address.twitter}}>Twitter</a></li>
+              </ul>
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div class="col-md-5 ">
+          <div class="block-7">
+            <form action="#" method="post">
+              <label for="email_subscribe" class="footer-heading">Subscribe</label>
+              <div class="form-group">
+                <input type="text" name="mail"
+                class="form-control py-4" id="email_subscribe" placeholder="Email" [(ngModel)]=message.mailid>
+                <input type="submit" class="btn btn-sm btn-primary" value="Send" (click)="subscribe()">
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-4" style="margin-left:90px">
+          <div class="block-5 mb-5 ">
+            <h3 class="footer-heading mb-4">Contact Info</h3>
+            <ul class="list-unstyled">
+              <li class="address">{{address.add}}</li>
+              <li class="phone">{{address.mobile}}</li>
+              <li class="email">{{address.email}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </footer>

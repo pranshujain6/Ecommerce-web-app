@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('../../assets/images/bg-registration-form-1.jpg');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="../../assets/images/registration-form-1.jpg" alt="">
+				</div>
+				<form #userform = "ngForm" novalidate (ngSubmit)="submitData()">
+					<h3>Create An Account</h3>
+					<div class="form-wrapper">
+						<input type="text" placeholder="First Name" class="form-control" required name="fname" 
+							 #uname = "ngModel"	[class.is-invalid] = "uname.invalid && uname.touched" [(ngModel)]="cred.fname">
+						<small class="text-danger" [class.d-none]="uname.valid || uname.untouched">First Name is reuired</small>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Last Name" class="form-control" required name="lname"
+						#lname="ngModel" [class.is-invalid]="uname.invalid&&uname.touched" [(ngModel)]="cred.lname">
+						<small class="text-danger" [class.d-none]="lname.valid || lname.untouched">Last name is required</small>
+					</div>
+				
+					<div class="form-wrapper">
+						<input type="text" placeholder="Username" class="form-control" required name="username"
+						#username="ngModel" [class.is-invalid]="username.invalid&&username.untouched" [(ngModel)]="cred.username">
+						<i class="zmdi zmdi-account"></i>
+						<small class="text-danger" [class.d-none]="username.valid || username.untouched">User name is required</small>
+						<small style="color:green" [class.d-none]=!(userExist)>User Name unavailable</small>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Email Address" class="form-control" required name="email"
+						#email="ngModel" [class.is-invalid]="email.invalid&&email.untouched" [(ngModel)]="cred.email">
+						<i class="zmdi zmdi-email"></i>
+						<small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>	
+					</div>
+					<div class="form-wrapper">
+						<select name="" id="" class="form-control" required name="gender" 
+						#gender="ngModel" [class.is-invalid]="gender.invalid&&gender.untouched" [(ngModel)]="cred.gender">
+							<option value="" disabled selected>Gender</option>
+							<option value="male">Male</option>
+							<option value="femal">Female</option>
+							<option value="other">Other</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+						<small class="text-danger" [class.d-none]="gender.valid || gender.untouched">Gender is required</small>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Password" class="form-control" required name="pass"
+						#pass="ngModel" [class.is-invalid]="pass.invalid&&pass.untouched" [(ngModel)]="cred.password">
+						<small class="text-danger" [class.d-none]="pass.valid || pass.untouched">Password is required</small>
+					</div>
+					<button  [disabled]="userform.form.invalid" type="submit" class="btn btn-primary">Register
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body>
+</html>
